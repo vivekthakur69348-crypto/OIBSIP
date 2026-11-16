@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter | TempSwap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header id="header">
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/>
+                </svg>
+                TempSwap
+            </a>
+            <ul class="nav-links">
+                <li><a href="#converter" class="nav-link">Converter</a></li>
+                <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                <li><a href="#reference" class="nav-link">Reference</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ========== HERO ========== -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">Temperature Tool</div>
+                <h1>Instant Temperature <span class="gradient-text">Converter</span></h1>
+                <p>Convert between Celsius, Fahrenheit, and Kelvin in real-time with a beautiful, easy-to-use interface.</p>
+                <a href="#converter" class="btn btn-primary">Start Converting</a>
+            </div>
+            <div class="hero-visual">
+                <div class="thermo-display">
+                    <div class="thermo-card thermo-hot">
+                        <span class="thermo-value">100°C</span>
+                        <span class="thermo-label">Boiling Point</span>
+                    </div>
+                    <div class="thermo-card thermo-warm">
+                        <span class="thermo-value">37°C</span>
+                        <span class="thermo-label">Body Temp</span>
+                    </div>
+                    <div class="thermo-card thermo-cold">
+                        <span class="thermo-value">0°C</span>
+                        <span class="thermo-label">Freezing Point</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONVERTER ========== -->
+        <section id="converter" class="section converter-section">
+            <div class="container">
+                <h2 class="section-title">Convert Temperature</h2>
+                <p class="section-subtitle">Enter a value and select the unit — results appear instantly</p>
+
+                <div class="converter-card">
+                    <!-- Input Area -->
+                    <div class="input-area">
+                        <div class="input-group">
+                            <label for="tempInput">Enter Temperature</label>
+                            <div class="input-wrapper">
+                                <input type="number" id="tempInput" placeholder="e.g. 100" step="any" autofocus>
+                                <span class="input-icon">°</span>
+                            </div>
+                        </div>
+                        <div class="unit-selector">
+                            <label>Select Unit</label>
+                            <div class="unit-buttons">
+                                <button class="unit-btn active" data-unit="celsius">°C <span>Celsius</span></button>
+                                <button class="unit-btn" data-unit="fahrenheit">°F <span>Fahrenheit</span></button>
+                                <button class="unit-btn" data-unit="kelvin">K <span>Kelvin</span></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Swap Button -->
+                    <div class="swap-divider">
+                        <button class="swap-btn" id="swapBtn" title="Swap conversion">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <polyline points="19 12 12 19 5 12"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Results Area -->
+                    <div class="results-area" id="resultsArea">
+                        <div class="result-card" id="result1">
+                            <div class="result-unit" id="resultUnit1">°F</div>
+                            <div class="result-value" id="resultValue1">—</div>
+                            <div class="result-name" id="resultName1">Fahrenheit</div>
+                        </div>
+                        <div class="result-card" id="result2">
+                            <div class="result-unit" id="resultUnit2">K</div>
+                            <div class="result-value" id="resultValue2">—</div>
+                            <div class="result-name" id="resultName2">Kelvin</div>
+                        </div>
+                    </div>
+
+                    <!-- Formula Display -->
+                    <div class="formula-display" id="formulaDisplay">
+                        <p class="formula-label">Formula used:</p>
+                        <p class="formula-text" id="formulaText">Enter a value to see the conversion formula</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== HOW IT WORKS ========== -->
+        <section id="how-it-works" class="section how-section">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Simple three-step process</p>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Enter Value</h3>
+                        <p>Type any temperature value in the input field — positive, negative, or decimal numbers all work.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Pick Your Unit</h3>
+                        <p>Select whether your input is in Celsius (°C), Fahrenheit (°F), or Kelvin (K).</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Get Results</h3>
+                        <p>Instantly see the converted values in the other two units, along with the formula used.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== REFERENCE TABLE ========== -->
+        <section id="reference" class="section reference-section">
+            <div class="container">
+                <h2 class="section-title">Quick Reference</h2>
+                <p class="section-subtitle">Common temperature benchmarks</p>
+                <div class="table-wrapper">
+                    <table class="ref-table">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Celsius (°C)</th>
+                                <th>Fahrenheit (°F)</th>
+                                <th>Kelvin (K)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Absolute Zero</td>
+                                <td>-273.15</td>
+                                <td>-459.67</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>Freezing Point of Water</td>
+                                <td>0</td>
+                                <td>32</td>
+                                <td>273.15</td>
+                            </tr>
+                            <tr>
+                                <td>Room Temperature</td>
+                                <td>22</td>
+                                <td>71.6</td>
+                                <td>295.15</td>
+                            </tr>
+                            <tr>
+                                <td>Human Body Temperature</td>
+                                <td>37</td>
+                                <td>98.6</td>
+                                <td>310.15</td>
+                            </tr>
+                            <tr>
+                                <td>Boiling Point of Water</td>
+                                <td>100</td>
+                                <td>212</td>
+                                <td>373.15</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Conversion Formulas -->
+                <div class="formulas-grid">
+                    <div class="formula-card">
+                        <h4>Celsius → Fahrenheit</h4>
+                        <p class="formula">°F = (°C × 9/5) + 32</p>
+                    </div>
+                    <div class="formula-card">
+                        <h4>Fahrenheit → Celsius</h4>
+                        <p class="formula">°C = (°F − 32) × 5/9</p>
+                    </div>
+                    <div class="formula-card">
+                        <h4>Celsius → Kelvin</h4>
+                        <p class="formula">K = °C + 273.15</p>
+                    </div>
+                    <div class="formula-card">
+                        <h4>Kelvin → Celsius</h4>
+                        <p class="formula">°C = K − 273.15</p>
+                    </div>
+                    <div class="formula-card">
+                        <h4>Fahrenheit → Kelvin</h4>
+                        <p class="formula">K = (°F − 32) × 5/9 + 273.15</p>
+                    </div>
+                    <div class="formula-card">
+                        <h4>Kelvin → Fahrenheit</h4>
+                        <p class="formula">°F = (K − 273.15) × 9/5 + 32</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/>
+                    </svg>
+                    <span>TempSwap</span>
+                </div>
+                <p>Built by <strong>Vivek Thakur</strong> — Oasis Infobyte SIP</p>
+                <div class="footer-links">
+                    <a href="https://github.com/vivekthakur69348-crypto" target="_blank" rel="noopener">GitHub</a>
+                    <span>•</span>
+                    <a href="https://github.com/vivekthakur69348-crypto/OIBSIP" target="_blank" rel="noopener">OIBSIP Repo</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== CONVERSION LOGIC =====
+        var tempInput = document.getElementById("tempInput");
+        var unitBtns = document.querySelectorAll(".unit-btn");
+        var resultValue1 = document.getElementById("resultValue1");
+        var resultValue2 = document.getElementById("resultValue2");
+        var resultUnit1 = document.getElementById("resultUnit1");
+        var resultUnit2 = document.getElementById("resultUnit2");
+        var resultName1 = document.getElementById("resultName1");
+        var resultName2 = document.getElementById("resultName2");
+        var formulaText = document.getElementById("formulaText");
+        var resultsArea = document.getElementById("resultsArea");
+        var swapBtn = document.getElementById("swapBtn");
+
+        var currentUnit = "celsius";
+
+        var unitData = {
+            celsius:    { symbol: "°C", name: "Celsius" },
+            fahrenheit: { symbol: "°F", name: "Fahrenheit" },
+            kelvin:     { symbol: "K",  name: "Kelvin" }
+        };
+
+        // Conversion functions
+        function celsiusTo(val) {
+            return {
+                fahrenheit: (val * 9 / 5) + 32,
+                kelvin: val + 273.15
+            };
+        }
+
+        function fahrenheitTo(val) {
+            return {
+                celsius: (val - 32) * 5 / 9,
+                kelvin: (val - 32) * 5 / 9 + 273.15
+            };
+        }
+
+        function kelvinTo(val) {
+            return {
+                celsius: val - 273.15,
+                fahrenheit: (val - 273.15) * 9 / 5 + 32
+            };
+        }
+
+        function formatNum(n) {
+            return parseFloat(n.toFixed(4)).toString();
+        }
+
+        function getFormula(from, val) {
+            var v = formatNum(val);
+            if (from === "celsius") {
+                return "°F = (" + v + " × 9/5) + 32  |  K = " + v + " + 273.15";
+            } else if (from === "fahrenheit") {
+                return "°C = (" + v + " − 32) × 5/9  |  K = (" + v + " − 32) × 5/9 + 273.15";
+            } else {
+                return "°C = " + v + " − 273.15  |  °F = (" + v + " − 273.15) × 9/5 + 32";
+            }
+        }
+
+        function getOtherUnits(unit) {
+            var units = ["celsius", "fahrenheit", "kelvin"];
+            return units.filter(function(u) { return u !== unit; });
+        }
+
+        function convert() {
+            var val = parseFloat(tempInput.value);
+            var others = getOtherUnits(currentUnit);
+
+            if (isNaN(val) || tempInput.value.trim() === "") {
+                resultValue1.textContent = "—";
+                resultValue2.textContent = "—";
+                resultUnit1.textContent = unitData[others[0]].symbol;
+                resultUnit2.textContent = unitData[others[1]].symbol;
+                resultName1.textContent = unitData[others[0]].name;
+                resultName2.textContent = unitData[others[1]].name;
+                formulaText.textContent = "Enter a value to see the conversion formula";
+                resultsArea.classList.remove("has-results");
+                return;
+            }
+
+            var results;
+            if (currentUnit === "celsius") results = celsiusTo(val);
+            else if (currentUnit === "fahrenheit") results = fahrenheitTo(val);
+            else results = kelvinTo(val);
+
+            resultUnit1.textContent = unitData[others[0]].symbol;
+            resultUnit2.textContent = unitData[others[1]].symbol;
+            resultName1.textContent = unitData[others[0]].name;
+            resultName2.textContent = unitData[others[1]].name;
+            resultValue1.textContent = formatNum(results[others[0]]);
+            resultValue2.textContent = formatNum(results[others[1]]);
+            formulaText.textContent = getFormula(currentUnit, val);
+            resultsArea.classList.add("has-results");
+        }
+
+        // Unit button click
+        unitBtns.forEach(function(btn) {
+            btn.addEventListener("click", function() {
+                unitBtns.forEach(function(b) { b.classList.remove("active"); });
+                this.classList.add("active");
+                currentUnit = this.getAttribute("data-unit");
+                convert();
+            });
+        });
+
+        // Real-time conversion on input
+        tempInput.addEventListener("input", convert);
+
+        // Swap: take result1 value and put it as input with result1's unit
+        swapBtn.addEventListener("click", function() {
+            var val1 = resultValue1.textContent;
+            if (val1 === "—") return;
+
+            var others = getOtherUnits(currentUnit);
+            var newUnit = others[0];
+
+            // Set new unit
+            unitBtns.forEach(function(b) {
+                b.classList.remove("active");
+                if (b.getAttribute("data-unit") === newUnit) b.classList.add("active");
+            });
+            currentUnit = newUnit;
+            tempInput.value = val1;
+
+            // Animate swap button
+            swapBtn.classList.add("spinning");
+            setTimeout(function() { swapBtn.classList.remove("spinning"); }, 400);
+
+            convert();
+        });
+
+        // Initialize display
+        convert();
+
+        // ===== STICKY HEADER =====
+        var header = document.getElementById("header");
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+
+        // ===== SCROLL ANIMATIONS =====
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll(".step-card, .formula-card, .converter-card, .table-wrapper").forEach(function(el) {
+            el.classList.add("fade-up");
+            observer.observe(el);
+        });
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute("href"));
+                if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+            });
+        });
+    </script>
+</body>
+</html>
