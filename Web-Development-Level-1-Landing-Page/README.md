@@ -63,5 +63,5 @@ Web-Development-Level-1-Landing-Page/
 
 ### Author
 
-**Himanshu Thakur**
+**Vivek Thakur**
 Oasis Infobyte — Summer Internship Program (SIP)
